@@ -59,6 +59,16 @@ def handle_find():
     show_books(books)
 
 
+def handle_stats():
+    stats = collection.get_reading_stats()
+    print("\nReading Statistics")
+    print("------------------")
+    print(f"Total books: {stats['total']}")
+    print(f"Read: {stats['read']}")
+    print(f"Unread: {stats['unread']}")
+    print(f"Completion: {stats['percent_read']}%\n")
+
+
 def show_help():
     print("""
 Book Collection Helper
@@ -68,6 +78,7 @@ Commands:
   add      - Add a new book
   remove   - Remove a book by title
   find     - Find books by author
+  stats    - Show reading statistics
   help     - Show this help message
 """)
 
@@ -87,6 +98,8 @@ def main():
         handle_remove()
     elif command == "find":
         handle_find()
+    elif command == "stats":
+        handle_stats()
     elif command == "help":
         show_help()
     else:
