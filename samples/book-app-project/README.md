@@ -33,7 +33,24 @@ python book_app.py add
 python book_app.py find
 python book_app.py remove
 python book_app.py help
+python book_app.py stats
 ```
+
+### Reading statistics
+
+`python book_app.py stats` shows how much of your collection you have read.
+It only reads the collection; `data.json` is not changed.
+
+```text
+Reading Statistics
+------------------
+Total books: 5
+Read: 1
+Unread: 4
+Completion: 20.0%
+```
+
+Completion is rounded to one decimal place and is `0.0%` for an empty collection.
 
 ## Running Tests
 
