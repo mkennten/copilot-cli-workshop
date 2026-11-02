@@ -58,6 +58,23 @@ class BookCollection:
             return True
         return False
 
+    def get_reading_stats(self) -> dict:
+        """Return reading statistics: total, read, unread and percent_read.
+
+        percent_read is rounded to one decimal place and is 0.0 for an empty
+        collection. The calculation does not modify the collection or data.json.
+        """
+        total = len(self.books)
+        read_count = sum(1 for book in self.books if book.read)
+        unread_count = total - read_count
+        percent_read = round((read_count / total) * 100, 1) if total else 0.0
+        return {
+            "total": total,
+            "read": read_count,
+            "unread": unread_count,
+            "percent_read": percent_read,
+        }
+
     def remove_book(self, title: str) -> bool:
         """Remove a book by title."""
         book = self.find_book_by_title(title)
