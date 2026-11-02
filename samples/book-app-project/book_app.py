@@ -34,8 +34,9 @@ def handle_add():
     year_str = input("Year: ").strip()
 
     try:
-        year = int(year_str) if year_str else 0
-        collection.add_book(title, author, year)
+        if not year_str.isdigit():
+            raise ValueError("Year must be a whole number, e.g. 1999.")
+        collection.add_book(title, author, int(year_str))
         print("\nBook added successfully.\n")
     except ValueError as e:
         print(f"\nError: {e}\n")

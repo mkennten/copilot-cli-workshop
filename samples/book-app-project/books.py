@@ -1,8 +1,10 @@
+import datetime
 import json
 from dataclasses import dataclass, asdict
 from typing import List, Optional
 
 DATA_FILE = "data.json"
+MIN_YEAR = 1450  # first printed books
 
 
 @dataclass
@@ -36,6 +38,23 @@ class BookCollection:
             json.dump([asdict(b) for b in self.books], f, indent=2)
 
     def add_book(self, title: str, author: str, year: int) -> Book:
+        """Validate and add a new book, then persist the collection.
+
+        Raises:
+            ValueError: if title/author are empty, the year is out of range,
+                or a book with the same title (case-insensitive) already exists.
+        """
+        title = (title or "").strip()
+        author = (author or "").strip()
+        if not title:
+            raise ValueError("Title must not be empty.")
+        if not author:
+            raise ValueError("Author must not be empty.")
+        max_year = datetime.date.today().year
+        if not isinstance(year, int) or isinstance(year, bool) or not MIN_YEAR <= year <= max_year:
+            raise ValueError(f"Year must be between {MIN_YEAR} and {max_year}.")
+        if self.find_book_by_title(title):
+            raise ValueError(f"A book titled '{title}' already exists.")
         book = Book(title=title, author=author, year=year)
         self.books.append(book)
         self.save_books()
