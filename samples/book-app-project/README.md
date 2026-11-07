@@ -38,7 +38,7 @@ python book_app.py help
 ## Running Tests
 
 ```bash
-python -m pytest tests/
+python -m pytest tests -q
 ```
 
 ---
