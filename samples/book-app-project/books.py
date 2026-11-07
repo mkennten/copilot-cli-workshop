@@ -60,12 +60,10 @@ class BookCollection:
 
     def remove_book(self, title: str) -> bool:
         """Remove a book by title."""
-        book = self.find_book_by_title(title)
-        if book:
-            self.books.remove(book)
-            self.save_books()
-            return True
-        return False
+        # Simplified: filter in one pass instead of find + remove
+        self.books = [b for b in self.books if b.title.lower() != title.lower()]
+        self.save_books()
+        return True
 
     def find_by_author(self, author: str) -> List[Book]:
         """Find all books by a given author."""
