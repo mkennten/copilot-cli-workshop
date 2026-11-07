@@ -1,4 +1,5 @@
 def print_menu():
+    """Print the interactive menu."""
     print("\n📚 Book Collection App")
     print("1. Add a book")
     print("2. List books")
