@@ -1,0 +1,19 @@
+2026-11-05 07:58:01.112 INF Orders.Api starting (Environment=Production, Version=4.12.3)
+2026-11-05 07:58:02.540 INF Connected to message broker sb-orders-prod (queue: order-created)
+2026-11-05 08:14:37.901 WRN Slow query detected (8412 ms): SELECT * FROM dbo.OrderLines WHERE OrderId = @p0
+2026-11-05 08:14:45.004 ERR Request POST /api/orders/7731/confirm failed (TraceId=4f1c2d7e9a)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReaderAsync(CancellationToken cancellationToken)
+   at Orders.Infrastructure.OrderRepository.GetLinesAsync(Int32 orderId) in /src/Orders.Infrastructure/OrderRepository.cs:line 88
+   at Orders.Application.ConfirmOrderHandler.Handle(ConfirmOrder command, CancellationToken ct) in /src/Orders.Application/ConfirmOrderHandler.cs:line 41
+2026-11-05 08:14:45.010 ERR Unhandled exception while processing message order-created (MessageId=b81e0c55)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Orders.Application.ConfirmOrderHandler.Handle(ConfirmOrder command, CancellationToken ct) in /src/Orders.Application/ConfirmOrderHandler.cs:line 47
+   at Orders.Messaging.OrderCreatedConsumer.Consume(ConsumeContext`1 context) in /src/Orders.Messaging/OrderCreatedConsumer.cs:line 29
+2026-11-05 08:14:45.311 WRN Message b81e0c55 moved to dead-letter queue after 5 delivery attempts
+2026-11-05 08:15:02.774 WRN Slow query detected (9120 ms): SELECT * FROM dbo.OrderLines WHERE OrderId = @p0
+2026-11-05 08:15:09.880 ERR Request POST /api/orders/7734/confirm failed (TraceId=9b3a11c4e2)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.
+   at Orders.Infrastructure.OrderRepository.GetLinesAsync(Int32 orderId) in /src/Orders.Infrastructure/OrderRepository.cs:line 88
+2026-11-05 08:16:40.002 INF Health check /health/ready: Degraded (sql: 9.1 s, broker: ok)

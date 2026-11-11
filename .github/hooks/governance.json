@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "type": "command",
+        "bash": "python3 .github/hooks/scripts/audit_log.py sessionStart",
+        "powershell": "python .github/hooks/scripts/audit_log.py sessionStart",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ],
+    "preToolUse": [
+      {
+        "type": "command",
+        "bash": "python3 .github/hooks/scripts/pre_tool_guard.py",
+        "powershell": "python .github/hooks/scripts/pre_tool_guard.py",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ],
+    "postToolUse": [
+      {
+        "type": "command",
+        "bash": "python3 .github/hooks/scripts/audit_log.py postToolUse",
+        "powershell": "python .github/hooks/scripts/audit_log.py postToolUse",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ],
+    "subagentStart": [
+      {
+        "type": "command",
+        "bash": "python3 .github/hooks/scripts/audit_log.py subagentStart",
+        "powershell": "python .github/hooks/scripts/audit_log.py subagentStart",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ],
+    "subagentStop": [
+      {
+        "type": "command",
+        "bash": "python3 .github/hooks/scripts/audit_log.py subagentStop",
+        "powershell": "python .github/hooks/scripts/audit_log.py subagentStop",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ]
+  }
+}

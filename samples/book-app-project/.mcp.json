@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "book-catalog": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["mcp_server/book_catalog_server.py"],
+      "tools": ["search_catalog", "get_book_details", "suggest_next_read"]
+    },
+    "microsoft-learn": {
+      "type": "http",
+      "url": "https://learn.microsoft.com/api/mcp",
+      "tools": ["*"]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+Title,Author,Year,Read
+Brave New World,Aldous Huxley,1932,yes
+  Fahrenheit 451 , Ray Bradbury ,1953,
+The Martian,Andy Weir,2011,TRUE
+Clean Code,Robert C. Martin,2008,0
+Domain-Driven Design,Eric Evans,2003,no
+dune,FRANK HERBERT,1965,true
+,Unknown Author,2001,false
+Nameless Author Book,,1990,false
+Book From The Future,Some Author,2101,false
+Bad Year Book,Some Author,nineteen-ninety,false
+Maybe Read,Some Author,2005,maybe
+The Martian,Andy Weir,2011,false

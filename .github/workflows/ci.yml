@@ -1,0 +1,28 @@
+# Continuous integration for the Book App.
+# Runs on every push and pull request - also used in the workshop's "red build" demo
+# (branch demo/broken-build fails here on purpose).
+# Enterprise note: many organisations pin actions to a full commit SHA instead of a tag.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: samples/book-app-project
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install test tooling
+        run: python -m pip install "pytest>=8.0"
+      - name: Run tests
+        run: python -m pytest tests -q

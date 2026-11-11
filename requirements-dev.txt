@@ -1,0 +1,5 @@
+pytest>=8.0
+# Optional: only for the local "book-catalog" MCP server demo
+# mcp 1.x on purpose: Copilot CLI cannot connect to stdio servers built with MCP SDK 2.x yet
+# (it sends the 2025 "initialize" after the 2026 "server/discover" probe - github/copilot-cli#4888)
+mcp>=1.2,<2

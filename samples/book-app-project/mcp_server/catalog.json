@@ -1,0 +1,17 @@
+[
+  {"title": "The Hobbit", "author": "J.R.R. Tolkien", "year": 1937, "genre": "Fantasy", "summary": "A reluctant hobbit joins a company of dwarves on a quest for treasure."},
+  {"title": "The Lord of the Rings", "author": "J.R.R. Tolkien", "year": 1954, "genre": "Fantasy", "summary": "An epic quest to destroy a ring of power."},
+  {"title": "1984", "author": "George Orwell", "year": 1949, "genre": "Dystopia", "summary": "Life under total surveillance in a one-party state."},
+  {"title": "Animal Farm", "author": "George Orwell", "year": 1945, "genre": "Satire", "summary": "A farm revolution that slowly turns into the tyranny it replaced."},
+  {"title": "Brave New World", "author": "Aldous Huxley", "year": 1932, "genre": "Dystopia", "summary": "A society kept stable through engineering, conditioning and pleasure."},
+  {"title": "Fahrenheit 451", "author": "Ray Bradbury", "year": 1953, "genre": "Dystopia", "summary": "A fireman whose job is burning books starts to question it."},
+  {"title": "Dune", "author": "Frank Herbert", "year": 1965, "genre": "Science Fiction", "summary": "Politics, religion and ecology on a desert planet."},
+  {"title": "Neuromancer", "author": "William Gibson", "year": 1984, "genre": "Science Fiction", "summary": "A washed-up hacker is hired for one last job in cyberspace."},
+  {"title": "Project Hail Mary", "author": "Andy Weir", "year": 2021, "genre": "Science Fiction", "summary": "A lone astronaut wakes up with a mission to save Earth."},
+  {"title": "The Martian", "author": "Andy Weir", "year": 2011, "genre": "Science Fiction", "summary": "An astronaut stranded on Mars has to science his way home."},
+  {"title": "To Kill a Mockingbird", "author": "Harper Lee", "year": 1960, "genre": "Classic", "summary": "Justice and prejudice seen through a child's eyes in the American South."},
+  {"title": "The Pragmatic Programmer", "author": "Andrew Hunt", "year": 1999, "genre": "Software Engineering", "summary": "Practical habits and principles for software craftsmanship."},
+  {"title": "Clean Code", "author": "Robert C. Martin", "year": 2008, "genre": "Software Engineering", "summary": "Guidelines for writing readable, maintainable code."},
+  {"title": "Refactoring", "author": "Martin Fowler", "year": 1999, "genre": "Software Engineering", "summary": "A catalogue of behaviour-preserving code improvements."},
+  {"title": "Accelerate", "author": "Nicole Forsgren", "year": 2018, "genre": "Software Engineering", "summary": "Research on what drives software delivery performance."}
+]
